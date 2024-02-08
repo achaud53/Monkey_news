@@ -7,9 +7,9 @@ export default class News extends Component {
   constructor(){
     super();
     console.log("I am constructor from News")
-    // this.state = {
-    //     artticles : this.articles
-    // }
+    this.state = {
+      articles : []
+    }
   }
 
   async componentDidMount(){
@@ -27,7 +27,7 @@ export default class News extends Component {
         
             <div className="row">
                 {
-                    this.state.artticles.map((element) => {
+                    this.state.articles.map((element) => {
                         return  <div className="col-md-4 my-3" key={element.url}>
                         <NewsItem tittle={element.title} discription={element.description} imageUrl={element.urlToImage} newsUrl={element.url}/>
                         </div>
